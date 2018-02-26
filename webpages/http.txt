@@ -1,3 +1,25 @@
 What is http
-HTTP or Hypertext Transfer Protocol is a set of rules for transferring files like
-text, images or multimedia types
+HTTP or Hypertext Transfer Protocol is an application-level protocol for distributed, collaborative, hypermedia information systems. It has been
+used by the World Wide Web for global information since 1990.
+
+Some terminologies
+connection
+	Transport layer virtual circuit established between two application for the purpose of communication
+message
+	Basic unit of HTTP communication
+request
+	HTTP request message
+response
+	HTTP response message
+entity
+	A particular representation of data resources, or reply from a service resource, that may be enclosed within a request or response
+	message. Consists of metainformation in the form of entity headers and content in the form of an entity body
+client
+	An application program that establishes a connection for the purpose of sending requests.
+user agent
+	The client which initiates a request
+server
+	An application program that accepts connections in order to service requests by sending back responses
+cache
+	A program's local store of response messages and the subsystem that controls its message storage, retrieval and deletion. It reduces the
+	response time and network bandwidth consumption on future same requests.
