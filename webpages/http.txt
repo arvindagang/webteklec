@@ -1,0 +1,3 @@
+What is http
+HTTP or Hypertext Transfer Protocol is a set of rules for transferring files like
+text, images or multimedia types
