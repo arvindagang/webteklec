@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Anton|Lobster|Nanum+Gothic');
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 
+html {
+    position: relative;
+    min-height: 100%;
+}
 * {
   box-sizing: border-box;
 }
@@ -17,6 +21,9 @@ body {
   font-family: 'Merriweather', serif;
   padding: 20px;
   background: linear-gradient(#6693ba, #004b8d);
+  margin: 0 0 100px;
+  
+    
 }
 
 .box {
@@ -69,7 +76,7 @@ body {
   	margin-top: -30px;
   	margin-bottom: 0px;
   	line-height: 300px;
-  	background: -webkit-linear-gradient(#eee, #333);
+  	background: -webkit-linear-gradient(white, #666666);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -83,6 +90,9 @@ body {
   	margin-top: -30px;
   	font-size: 60px;
   	line-height: 300px;
+  		background: -webkit-linear-gradient(white, #b2b2b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   	
  }
 @keyframes up-bump {
@@ -123,6 +133,17 @@ body {
 
 }
 
+footer {
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 90px;
+    width: 100%;
+    overflow:hidden;
+    font-size: 12px;
+    background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-
-
+}
