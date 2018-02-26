@@ -27,13 +27,13 @@ body {
 }
 
 .box {
-  padding: 2em;
+  padding: 1em;
   border: none;
   display: block;
   width: 50%;
-  height: 400px;
+  height: 500px;
   float: left;
-  margin: -1px 0 0 -1px;
+  margin: -150px 0 0 -1px;
   color: transparent;
   background: linear-gradient(
      #004b8d, #004b8d 50%, ##6693ba 50%, #004b8d
@@ -45,10 +45,11 @@ body {
 .box h2 {
   font-weight: 400;
   letter-spacing: -1.5px;
-  line-height: 1.2;
+  line-height: 0.5;
 }
 .box h3 {
-  font: 1.2em "Lucida Grande", serif;
+  font: 1.1em "Lucida Grande", serif;
+
 }
 
 .box:hover {
@@ -57,13 +58,21 @@ body {
 }
 .box:hover h2 {
   color: #48ad26;
+  background: linear-gradient(#1e3c72, #2a5298);
+
 
 }
 .box:hover h2 span {
-  color: white;
+  background: -webkit-linear-gradient(#96deda, #50c9c3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .box:hover h3 {
-  color: #999;
+  color: #b2b2b2;
+  background: -webkit-linear-gradient(white, #999999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;/*design*/
+
 }
 
 #content{
@@ -71,11 +80,11 @@ body {
 	text-align: center;
 	background: linear-gradient(#6693ba, #004b8d);
   	color: white;
-  	height: 40vh;
-  	font-size: 60px;
-  	margin-top: -30px;
-  	margin-bottom: 0px;
-  	line-height: 300px;
+  	height: 50vh;
+  	font-size: 55px;
+  	margin-top: -50px;
+  	margin-bottom: -50px;
+  	line-height: 200px;
   	background: -webkit-linear-gradient(white, #666666);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -85,11 +94,11 @@ body {
 	text-align: center;
 	background: linear-gradient(#6693ba, #004b8d);
   	color: white;
-  	height: 40vh;
-  	margin-bottom: -20px;
-  	margin-top: -30px;
-  	font-size: 60px;
-  	line-height: 300px;
+  	height: 50vh;
+  	margin-bottom: -50px;
+  	margin-top: -50px;
+  	font-size: 55px;
+  	line-height: 200px;
   		background: -webkit-linear-gradient(white, #b2b2b2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -110,7 +119,7 @@ body {
 	color: green;
 	background-size: 100% 202%;
 	font-size: 20px;
-	margin-top: 0px;
+	margin-top: -150px;/*table of contents*/
 	background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
