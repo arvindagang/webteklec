@@ -1,0 +1,11 @@
+Request methods
+GET		only retrieve data
+HEAD	asks for a response identical to the GET request but without the response body
+POST	used to submit an entity to a specified resource, causes changes in state or side effects
+		on the server
+PUT		replaces all current representations of the target resource with the request payload
+DELETE	deletes the specified resource
+CONNECT	establishes a tunnel to the server identified by the target resource
+OPTIONS	used to describe the communication options for the target resource
+TRACE	performs a message loop-back test along the path to the target resource
+PATCH	used to apply partial modifications to a resource
