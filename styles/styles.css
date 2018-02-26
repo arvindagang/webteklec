@@ -20,7 +20,7 @@ a{
 body {
   font-family: 'Merriweather', serif;
   padding: 20px;
-  background: linear-gradient(#6693ba, #004b8d);
+  background: linear-gradient(#82172B, #0000FF);
   margin: 0 0 100px;
   
     
@@ -36,7 +36,7 @@ body {
   margin: -150px 0 0 -1px;
   color: transparent;
   background: linear-gradient(
-     #004b8d, #004b8d 50%, ##6693ba 50%, #004b8d
+     white, #004b8d 50%, ##6693ba 50%, #004b8d
   );
   background-size: 100% 202%;
   transition: all 3s ease;
@@ -60,18 +60,18 @@ body {
 }
 .box:hover h2 {
   color: #48ad26;
-  background: linear-gradient(#1e3c72, #2a5298);
+  
 
 
 }
 .box:hover h2 span {
-  background: -webkit-linear-gradient(#2193b0, #6dd5ed);
+  background: -webkit-linear-gradient(white, #6dd5ed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .box:hover h3 {
   color: #b2b2b2;
-  background: -webkit-linear-gradient(white, #999999);
+  background: -webkit-linear-gradient(white, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;/*design*/
 
@@ -101,7 +101,7 @@ body {
   	margin-top: -50px;
   	font-size: 55px;
   	line-height: 200px;
-  		background: -webkit-linear-gradient(white, #b2b2b2);
+  		background: -webkit-linear-gradient(white, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   	
@@ -118,25 +118,22 @@ body {
 }
 #second{
 	text-align: center;
-	color: green;
+	color: white;
 	background-size: 100% 202%;
 	font-size: 20px;
 	margin-top: -150px;/*table of contents*/
-	background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	
 }
 #third{
 	text-align:left;
-
+	line-height: 40px;
 	color: white;
 	background-size: 100% 202%;
 	font-size: 20px;
 	margin-left: -20px;
 	margin-top: 0px;
-	background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+	
 
 }
 #fourth{
@@ -153,7 +150,7 @@ footer {
     width: 100%;
     overflow:hidden;
     font-size: 12px;
-    background: -webkit-linear-gradient(#eee, #333);
+    background: -webkit-linear-gradient(white, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -164,4 +161,9 @@ footer {
 }
 .next p a{
 	color: yellow;
+}
+
+.topnav .active{
+	color: cyan;
+	font-size: 20px;
 }
