@@ -1,0 +1,33 @@
+*Scheme
+	- identifies the protocol to be used in accessing the resource on the Internet. It may be HTTP or
+	HTTPS
+
+*Host name
+	- an identifier that holds the resource
+	- also known as domain name
+	- it is provided by the server. It is mapped to a specific IP address, but host names and IP
+	addresses don't have a one-to-one relationship
+	
+*Path
+	- a path identifies the specific resource in the host that the client wants to access.
+	eg. /var/www/index.html
+	
+*Query
+	- whenever a query string is used, it follows the path and provides information that the resource
+	can use for other purpose like parameters when searching, or data that will be processed.
+	- is usually a string of name and value pairs
+	
+reference: https://www.ibm.com/support/knowledgecenter/en/SSGMCP_5.2.0/com.ibm.cics.ts.internet.doc/topics/dfhtl_uricomp.html
+
+*Fragment Identifier
+	- is a string of characters that refers to a portion of a document
+	- its syntax often starts with a hash (#) followed by the identifier
+	
+reference: https://www.w3.org/DesignIssues/Fragment.html
+
+*Authority
+	- consist of multiple parts, may it be an optional authentication section or an optional port number. The
+	authentication section consist of a username and password separated by a colon and followed by the '@' symbol
+	then the host name, and in optional port number, hostname then a colon then a specific port number.
+
+reference: http://searchmicroservices.techtarget.com/definition/URI-Uniform-Resource-Identifier
