@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+  <link rel="icon" href="../images/icon/favicon.ico" type="image/gif" sizes="16x16">
+	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+	<meta charset="UTF-8">
+		<title>
+  			HTTP Extensions I
+  		</title>
+
+<div class="topnav">
+  <a class="active" href="../index.html">Home</a>
+  <a class="active" href="Introduction.html">Introduction</a>
+  <a class="active" href="Introduction.html">Table of Contents</a>
+  <a class="active" href="#about">About</a>
+</div>
+  </head>
+  <body>
+  <h1 id="content2">
+      HTTP Extensions I
+  </h1>
+
+  
+   <div>
+  <a href="#" class="box">
+    <h2><span>Continuation </span> </h2>
+    <h3>
+&emsp;Safe Methods - are methods that does not modify server resources.<br>
+&emsp;Indempotent Methods - are methods use to manipulate a sever resources.<br><br>
+    
+&emsp;&emsp;Methods or verbs:<br>
+&emsp;&emsp;GET - request for specified resource. SAFE-INDEMPOTENT<br>
+&emsp;&emsp;HEAD - request for the head content. SAFE-INDEMPOTENT<br>
+&emsp;&emsp;POST - submit something in a resource. <br>
+&emsp;&emsp;PUT - replace something you put. INDEMPOTENT<br>
+&emsp;&emsp;DELETE - delete a specified resource. INDEMPOTENT<br>
+&emsp;&emsp;CONNECT - establish a connection. <br>
+&emsp;&emsp;OPTION - option for target resource. SAFE-INDEMPOTENT<br>
+&emsp;&emsp;TRACE - create a message loopback for the target resource.<br>
+&emsp;&emsp;PATCH - apply modification to a resource.<br>
+
+  </h3>
+  </a>
+  
+  <a href="#" class="box">
+    <h2><span>Content-Negotioation and other necessary thing.</span> </h2>
+    <h3>
+      
+&emsp;Going deeper, much necessary information are the content-negotiation
+    response by the header, it is use with Accept, Accept-Langauge, Content,
+    and Content-Langauge, these are headers or metadate which manipulates
+    the documentary of the site.<br><br>
+    
+&emsp;Accept - Syntax "Accept: $param"
+    following parameter: text/html, image, */* , text/plain
+    This will send back document format according to the inputed
+    parameter.<br><br>
+    
+    
+&emsp;Accept-Langauge - Syntax "Accept-Langauge: en-US"
+    following parameter: en-US, dan, en-UK, fil, fr and more.
+    The default langauge is always us, however, if the langaug
+    is not found another langauge is subtitute. langauge has its own
+    queue for langauge subtitute.<br><br>
+    
+    
+&emsp;Content-Langauge - Syntax "Content-Languege: $param"
+    following parameter: same as the above.
+    Return the content langauge. The content totally depends
+    on the specifed langauge.<br><br>
+    
+    
+
+
+
+    </h3>
+  </a>
+</div>  
+
+
+ <footer> 
+
+<h4>Group 3<br>
+&#10151;Baquiran, Clark
+&#10151;Dagang, Arvin
+&#10151;Laroya, Regae<br>
+&#10151;Onate, Prins
+&#10151;Pinto, Michael<br>
+&copy;All rights reserved 2018
+</h4>
+
+</footer>
+  </body>
+  </html>
