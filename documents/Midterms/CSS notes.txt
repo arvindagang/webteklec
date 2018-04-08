@@ -1,0 +1,66 @@
+CSS Values:
+INITIAL VALUE
+The initial value is the default value of a CSS property, the usage of the initial value depends
+	on whether a property is inherited or not.
+ -Inherited properties is used only on the root element, when no specified value is given 
+ -Non-inherited properties is used on all elements, when no specified value is given
+ 
+COMPUTED VALUE
+The computed value is the value that is transferred from parent to child during inheritance. It 
+	can be calculated from the specified value by
+ -Handling special values of inherit, initial, unset or revert
+ -Manually computing to reach the needed value showed in the computed value from the property's
+  definition table
+  
+USED VALUE
+The used value is the value calculated on the computed value. 
+After a user agent finished all calculations, every properties has a used value. Used values are in pixels 
+and shorthand properties are consistent with those of their component properties.
+
+ACTUAL VALUE
+The actual value is the used value of a property after approximations have been applied
+Steps to calculate actual value of a property:
+-The specified value is determined by the result of cascading, inheritance or initial value
+-The computed value is calculated according to the specification
+-Layout is calculated, resulting in used value
+-The used value is transformed according to the limitations resulting in the actual value
+Reference:
+*https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value
+*https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value
+*https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
+*https://developer.mozilla.org/en-US/docs/Web/CSS/actual_value
+
+
+CSS Types:
+CSS allows types of value like integers and real numbers, lenghts, percentages, URLs and URIs,
+	counters, colors, strings or even unsupported values
+-Integers and real numbers can be preceded by a '+' or '-' sign. Decimal numbers can also be used
+-Lengths can be used in specifying horizontal or vertical measurements
+	*Two types of units that can be used in CSS are relative and absolute units.
+		*-Relative units are relative to another length
+			e.g. px, em, ex
+		*-Absolute units are used to specify a fixed width
+			e.g. in, cm, mm, pt, pc
+-Percentages are used by a specifying a number then a '%' sign.
+-URLs and URIs are used to point to a resource 
+-Counters are denoted by case-sensitive identifiers
+-Colors can be either in a keyword or numerical (RGB or hexadecimal)
+-String are in a format with a single or double quotation marks
+-Unsupported values is being ignored as a an illegal value
+Reference:
+*https://www.w3resource.com/css/CSS-values.php
+
+
+CSS Preprocessors
+A CSS preprocessor generates a CSS from a preprocessor's own syntax. 
+	e.g. SASS, LESS, Stylus, PostCSS
+Reference:
+*https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor
+
+CSS Frameworks
+CSS framework are pre-built CSS using custom language syntax
+	e.g. Bootstrap, Foundation, Ulkit
+	
+CSS Polyfills
+CSS Polyfills provides features that developers expect browsers to provide natively
+	e.g. modernizer
