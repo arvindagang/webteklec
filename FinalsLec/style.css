@@ -1,0 +1,45 @@
+.column {
+	padding-top: 0px;
+    float: left;
+	width: 32.33%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 100vh;
+	background-color: #272727;
+}
+
+.column#c2 {
+	border-left: 6px solid black;
+	border-right: 6px solid black;
+}
+
+.column#c1:hover {
+	height: 100%;
+	background-color: black;
+	justify-content: center;
+    align-items: center;
+	height: 100vh;
+}
+
+.column#c2:hover {
+	height: 100%;
+	background-color: #90C53F;
+	justify-content: center;
+    align-items: center;
+	height: 100vh;
+}
+
+.column#c3:hover {
+	height: 100%;
+	background-color: #474B8A;
+	justify-content: center;
+    align-items: center;
+	height: 100vh;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
