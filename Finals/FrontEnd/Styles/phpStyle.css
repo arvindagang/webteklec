@@ -1,0 +1,150 @@
+body{
+    margin: 0%;
+}
+
+a{
+    text-decoration: none;
+}
+section{
+    text-align: center;
+}
+
+.title_php{
+    margin: 0%;
+    padding: 2% 0%;
+    font-family: consolas;
+    font-size: 70px;
+    color: #2E86C1;
+    background-color: #36E3C8;
+}
+
+.info-box div {
+    height: 80.3vh;
+    float: left;
+	width: 33.3%;
+	display: flex;
+    justify-content: center;
+    align-items: center;	
+}
+
+.label{
+    font-family: consolas;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+/*Definition Section*/
+.definition {
+  position: absolute;
+  left: 0%;
+  background-color: #2E86C1;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.def {
+  font-family: consolas; 
+  font-size: 20px;
+  color: white;  
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: wrap;
+}
+
+.def_container:hover .definition {
+  width: 66.6%;
+  z-index: 100;
+}
+
+.def_container:hover .label{
+    display: none;
+}
+
+.def_container:hover .def{
+  display: inline;
+  z-index: 100;
+}
+/*End of Definition Section*/
+
+/*Use Section*/
+.use {
+  position: absolute;
+  left: 33.3%;
+  background-color: #5DADE2 ;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  z-index: -100;
+}
+
+.U {
+  font-family: consolas; 
+  font-size: 20px;
+  color: white;  
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: wrap;
+}
+
+.use_container:hover .use {
+  width: 66.6%;
+  z-index: 100;
+}
+
+.use_container:hover .label{
+    display: none;
+}
+
+.use_container:hover .U{
+  display: inline;
+  z-index: 100;
+}
+/*End of Use Section*/
+
+/*Technology Related Section*/
+.technology {
+  position: absolute;
+  right: 0.1%;
+  background-color: #AED6F1;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  z-index: -100;
+}
+
+.tech {
+  font-family: consolas; 
+  font-size: 20px;
+  color: white;  
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: wrap;
+}
+
+.tech_container:hover .technology {
+  width: 66.6%;
+}
+
+
+.tech_container:hover .label{
+    display: none;
+}
+
+.tech_container:hover .tech{
+  display: inline;
+}
+/*End of Technology Related Section*/
