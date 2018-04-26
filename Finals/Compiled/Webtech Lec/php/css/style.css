@@ -1,0 +1,97 @@
+
+
+input{
+    width: 430px;
+	margin: 0 auto;
+    padding: 10px;
+    border: 1px solid blue;
+}
+body{
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat, repeat;
+}
+@font-face{
+	font-family: Signature of the Ancient;
+	src:url("../fonts/Signature of the Ancient.ttf");
+}
+label, a, h2{
+	font-family: Signature of the Ancient;
+	font-size: 30px;
+
+}
+
+#main-wrapper{
+	border-radius : 10px;
+	background-color: white;
+	border: 3px solid blue;
+	width: 500px;
+	margin: 0 auto;
+}
+.innerContainer{
+	width:450px;
+	margin:0 auto;
+}
+.loginButton {
+    background-color: red;
+    color: white;
+	margin-top:10px;
+    padding:10px;
+    width: 100%;
+	font-size:18px;
+	font-weight: bold;
+}
+.registerButton{
+	background-color: blue;
+    color: white;
+	margin-top:10px;
+	margin-bottom:15px;
+	padding:10px;
+    width: 100%;
+	font-size:16px;
+	font-weight: bold;
+	
+}
+.backButton{
+	margin-top:10px;
+	color: white;
+	margin-bottom:15px;
+    padding: 10px;
+    background-color: #e67e22;
+}
+.logoutButton{
+	background-color: brown;
+    color: white;
+	margin-top:10px;
+    padding:10px;
+    width: 100%;
+	font-size:18px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.signUpButton {
+	background-color: #3498db;
+    color: white;
+	 padding:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+    width: 100%;
+	font-size:16px;
+	font-weight: bold;
+}
+
+.imageContainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+image.avatar {
+    width: 30%;
+    border-radius: 50%;
+}
+
+.container {
+    margin: 16px;
+	width:100%;
+}
+}
