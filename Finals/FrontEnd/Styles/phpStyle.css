@@ -58,7 +58,7 @@ section{
 }
 
 .def_container:hover .definition {
-  width: 66.6%;
+  width: 55%;
   z-index: 100;
 }
 
@@ -97,7 +97,7 @@ section{
 }
 
 .use_container:hover .use {
-  width: 66.6%;
+  width: 55%;
   z-index: 100;
 }
 
@@ -136,7 +136,7 @@ section{
 }
 
 .tech_container:hover .technology {
-  width: 66.6%;
+  width: 55%;
 }
 
 
