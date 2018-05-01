@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once ('dbconfig/config.php');
-
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,7 +47,7 @@
 					$_SESSION['username'] = $username;
 					$_SESSION['password'] = $password;
 					
-					header( "Location: homepage.php");
+					header( "Location: admin/index.php");
 					}
 					else
 					{

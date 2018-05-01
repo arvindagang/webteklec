@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once('dbconfig/config.php');
-	//phpinfo();
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,14 +51,14 @@
 						}
 						else
 						{
-							$query = "insert into user values('$username','$password')";
+							$query = "insert into user values('user_id','user_type', '$username', '$password')";
 							$query_run = mysqli_query($con,$query);
 							if($query_run)
 							{
 								echo '<script type="text/javascript">alert("User Registered.. Welcome")</script>';
 								$_SESSION['username'] = $username;
 								$_SESSION['password'] = $password;
-								header( "Location: homepage.php");
+								header( "Location: admin/index.php");
 							}
 							else
 							{
