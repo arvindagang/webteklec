@@ -1,106 +1,424 @@
-
-
-input{
-    width: 430px;
-	margin: 0 auto;
-    padding: 10px;
-    border: 1px solid blue;
+* {
+    
+    box-sizing: border-box;
 }
-body{
-	background-image: url(../images/bg.jpg);
-	background-repeat: no-repeat, repeat;
+
+head {
+    display: none;
+}
+html { 
+  background: url(../img/book.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    margin:0;
+    display: block;
+    background-image: url(../img/book.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+}*/
+.navbar-fixed-bottom, .navbar-fixed-top, .navbar-static-top {
+    border-radius: 0;
+}
+.navbar-inverse {
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    background-color: #222;
+    border-color: #080808;
+    background-repeat: repeat-x;
+}
+.navbar-fixed-top {
+    top: -10px;
+    border-width: 0 0 0px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+.navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    border: 1px solid transparent;
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+    border-radius: 0;
+}
+
+.navbar {
+    border-radius: 4px;
+}
+
+.navbar-header {
+    float: left;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left: -15px;
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.navbar-collapse.collapse {
+    display: block!important;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+}
+
+.navbar-collapse {
+    width: auto;
+    border-top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.navbar-right {
+    float: right!important;
+    margin-right: -15px;
+}
+.container {
+	width: 900px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    
+
+}
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #333;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+}
+.navbar-inverse .navbar-brand {
+    color: #9d9d9d;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+a {
+    background-color: transparent;
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #101010;
+}
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: 340px;
+}
+.navbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+   
+    border-top: 1px solid transparent;
+    
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+}
+.navbar-nav {
+    float: left;
+    margin: 7.5px -15px;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    
+}
+.navbar-nav>li {
+    float: left;
+}
+.nav>li {
+    position: relative;
+    display: block;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    
+}
+.glyphicon-paperclip:before {
+    content: "\e142";
+}
+
+.glyphicon-book:before {
+    content: "\e043";
+}
+.glyphicon-phone-alt:before {
+    content: "\e183";
+}
+.glyphicon-shopping-cart:before {
+    content: "\e116";
+}
+.glyphicon-log-out:before{
+    content:"\e163"}
+    
+@font-face{
+	font-family:'Glyphicons Halflings';
+	src:url(../fonts/glyphicons-halflings-regular.eot);
+	src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),
+	url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),
+	url(../fonts/glyphicons-halflings-regular.woff) format('woff'),
+	url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),
+	url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
+
 }
 @font-face{
-	font-family:Utopia-Black ;
-	src:url("../fonts/Utopia-Black.otf");
+    font-family:'Adobe Caslon';
+    src:url(../fonts/Adobe Caslon Pro Regular.ttf) format('truetype');
 }
-label, a, h2{
-	font-family: Utopia-Black;
-	font-size: 20px;
-
+div {
+    display: block;
 }
-
-#main-wrapper{
-	border-radius : 10px;
-	background-color: white;
-	border: 3px solid blue;
-	width: 500px;
-	margin: 0 auto;
+.col-md-3{
+	float: left;
 }
-
-.innerContainer{
-	width:450px;
-	margin:0 auto;
+.pull-right {
+    float: right!important;
 }
-.loginButton {
-    background-color: red;
-    color: white;
-	margin-top:10px;
-    padding:10px;
-    width: 100%;
-	font-size:18px;
-	font-weight: bold;
-	font-family:Utopia;
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
 }
-.registerButton{
-	background-color: blue;
-    color: white;
-	margin-top:10px;
-	margin-bottom:15px;
-	padding:10px;
-    width: 100%;
-	font-size:16px;
-	font-weight: bold;
-	font-family:Utopia;
-	
+h1{
+	color: red;
+    font-family: 'Adobe Caslon';
+    font-size: 50px;
 }
-.backButton{
-	margin-top:10px;
+.lead{
 	color: white;
-	margin-bottom:15px;
-    padding: 10px;
-    background-color: #e67e22;
-    font-family:Utopia;
+    font-size: 20px;
 }
-.logoutButton{
-	background-color: brown;
-    color: white;
-	margin-top:10px;
-    padding:10px;
-    width: 100%;
-	font-size:18px;
-	font-weight: bold;
-	margin-bottom: 30px;
-	font-family:Utopia;
+.img-thumbnail {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
 }
 
-.signUpButton {
-	background-color: #3498db;
+.h4, h4 {
+    font-size: 18px;
+}
+.h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h2, h3, h4, h5, h6 {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: red;
+}
+h4 {
+    display: block;
+    font-weight: bold;
+}
+main {
     color: white;
-	padding:10px;
-	margin-top:10px;
-	margin-bottom:10px;
+}
+p {
+    margin: 0 10px 10px;
+    
+    color:white;
+}
+.table {
     width: 100%;
-	font-size:16px;
-	font-weight: bold;
-	font-family:Utopia;
+    max-width: 100%;
+    margin-bottom: 20px;
+    display: table;
+    border: 1px solid transparent;
+}
+table {
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+    color:white;
+}
+.blink{
+        
+        background-color: none;
+        padding: 15px;  
+        text-align: center;
+        line-height: 50px;
+        animation: blink 5s linear infinite;
+}
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
 }
 
-.imageContainer {
+hr { 
+    border:0;
+    box-shadow: 0 0 10px 1px black;
+}
+.control-label {
+    color: white;
+}
+div #container {
+    display: table;
+}
+
+div #column {
+    display: table-cell;
+    column-gap: 10px;
+    border-spacing: 10px;
+
+}
+.input-group label{
+    color: white;
+    display: table-row;
+}
+
+.input-group {
+    margin: 10px 0px 10px 0px;
+}
+.input-group label {
+    display: block;
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 3px;
+
+}
+.input-group input {
+    height: 30px;
+    width: 15%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 3px solid green;
+   
 }
 
-image.avatar {
-    width: 30%;
-    border-radius: 50%;
+form{
+   margin-top: 15%;
+   text-align: center;
+    
 }
 
-.container {
-    margin: 16px;
-	width:100%;
-}
-
-#texts{
-	font-size: 15px;
+div .container{
+    text-align: center;
 }
