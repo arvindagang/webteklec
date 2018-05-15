@@ -1,58 +1,91 @@
 <?php
-
 	session_start();
-	require_once "functions/functions.php";
-	require_once "functions/cart_functions.php";
+	require_once "./functions/functions.php";
+	require_once "./functions/cart_functions.php";
 
-	$number = 1;
-	echo $number;
-	$query = "SELECT * FROM questions
-        			WHERE question = $number";
-     $result = mysqli_query($conn,$query);
-	require "template/header.php";
+	if(isset($_POST['bookisbn'])){
+		$book_isbn = $_POST['bookisbn'];
+	}
 
+	if(isset($book_isbn)){
 
+		if(!isset($_SESSION['cart'])){
+
+			$_SESSION['cart'] = array();
+			$_SESSION['total_items'] = 0;
+			$_SESSION['total_price'] = '0.00';
+		}
+
+		if(!isset($_SESSION['cart'][$book_isbn])){
+			$_SESSION['cart'][$book_isbn] = 1;
+		} elseif(isset($_POST['cart'])){
+			$_SESSION['cart'][$book_isbn]++;
+			unset($_POST);
+		}
+	}
+
+	if(isset($_POST['save_change'])){
+		foreach($_SESSION['cart'] as $isbn =>$qty){
+			if($_POST[$isbn] == '0'){
+				unset($_SESSION['cart']["$isbn"]);
+			} else {
+				$_SESSION['cart']["$isbn"] = $_POST["$isbn"];
+			}
+		}
+	}
+
+	$title = "Your shopping cart";
+	require "./template/header.php";
+
+	if(isset($_SESSION['cart']) && (array_count_values($_SESSION['cart']))){
+		$_SESSION['total_price'] = total_price($_SESSION['cart']);
+		$_SESSION['total_items'] = total_items($_SESSION['cart']);
 ?>
-
 <!DOCTYPE html>
 <html>
-
 <head>
-    
-    <title>Cart Quiz</title>
-   <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+	<title>My Cart</title>
 </head>
-
 <body>
-   
-   
-        <div class="container">
-            <div class="current" style="color: yellow"> CART QUIZ: Question 1</div>
-            <p class="question" name='question'>
-               <?php 
 
-                    $question = mysqli_fetch_assoc($result);
-                    echo $question['text'];
-                ?>
-            </p>
-            <form method="post" action="answer.php">
-                <ul class="choices" style="color: yellow; list-style-type:none;text-align: left">
-                    <li><input name="choice" type="radio" value="1" />Hypertext Preprocessor</li>
-                    <li><input name="choice" type="radio" value="1" />Personal Hyper Page</li>
-                    <li><input name="choice" type="radio" value="1" />Personal Hypertext Preprocessor</li>
-                    <li><input name="choice" type="radio" value="1" />People Hypertext Preprocessor</li>
-                </ul>
-                <input type="submit" value="submit" />
-            </form>
-        </div>
-   
-
-   
-</body>
-
-</html>
+   	<form action="cart.php" method="post">
+	   	<table class="table">
+	   		<tr>
+	   			<th>Item</th>
+	   			<th>Price</th>
+	  			<th>Quantity</th>
+	   			<th>Total</th>
+	   		</tr>
+	   		<?php
+		    	foreach($_SESSION['cart'] as $isbn => $qty){
+					$conn = db_connect();
+					$book = mysqli_fetch_assoc(getBookByIsbn($conn, $isbn));
+			?>
+			<tr>
+				<td><?php echo $book['book_title'] . " by " . $book['book_author']; ?></td>
+				<td><?php echo "₱" . $book['book_price']; ?></td>
+				<td style="color: black"><input type="text" value="<?php echo $qty; ?>" size="2" name="<?php echo $isbn; ?>"></td>
+				<td><?php echo "₱" . $qty * $book['book_price']; ?></td>
+			</tr>
+			<?php } ?>
+		    <tr>
+		    	<th>&nbsp;</th>
+		    	<th>&nbsp;</th>
+		    	<th><?php echo $_SESSION['total_items']; ?></th>
+		    	<th><?php echo "₱" . $_SESSION['total_price']; ?></th>
+		    </tr>
+	   	</table>
+	   	<input type="submit" class="btn btn-primary" name="save_change" value="Save Changes">
+	</form>
+	<br/><br/>
+	<a href="checkout.php" class="btn btn-primary">Go To Checkout</a> 
+	<a href="books.php" class="btn btn-primary">Continue Shopping</a>
 <?php
-if(isset($conn)){ mysqli_close($conn); }
-	require_once "template/footer.php";
+	} else {
+		echo "<p class=\"text-warning\">Your cart is empty! Please make sure you add some books in it!</p>";
+	}
+	if(isset($conn)){ mysqli_close($conn); }
+	require_once "./template/footer.php";
 ?>
+</body>
+</html>

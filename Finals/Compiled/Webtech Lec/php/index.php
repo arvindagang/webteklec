@@ -1,11 +1,8 @@
 <?php
 	session_start();
 	require_once "functions/functions.php";
-	
-	
+
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +15,10 @@
       	<a class="navbar-brand" href="../">Main Page</a>
       	</div>
     </nav>
-
-
 	<form class="login-group" method="post" action="homepage.php">
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="username" required>
+			<input type="text" name="username" required="">
 		</div>
 		<div class="input-group">
 			<label>Password</label>
@@ -37,7 +32,8 @@
 		</p>
 		
 	</form>
-
+</body>
+</html>
 
 
 

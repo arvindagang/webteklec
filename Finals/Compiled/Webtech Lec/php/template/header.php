@@ -19,13 +19,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">PHP Bookstore</a>
+          <a class="navbar-brand" href="index.php">PHP Course Website</a>
         </div>
 
     
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="admin/publisher_list.php"><span class="glyphicon glyphicon-paperclip"></span>&nbsp; Publisher</a></li>
+              <li><a href="publisher_list.php"><span class="glyphicon glyphicon-paperclip"></span>&nbsp; Publisher</a></li>
               <li><a href="books.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Books</a></li>
               <li><a href="contact.php"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp; Contact</a></li>
               <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; My Cart</a></li>
@@ -38,10 +38,10 @@
     <div class="jumbotron">
       <div class="container">
         <hr>
-        <h1 class="blink">Welcome to PHP Course </h1>
+        <h1 class="blink">Welcome to PHP Course Website </h1>
         <hr>
         <p class="lead">This site has been made using PHP with MYSQL </p>
-        <p>Welcome to PHP Course</p>
+       
       </div>
     </div>
    

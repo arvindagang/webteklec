@@ -2,8 +2,6 @@
 	session_start();
 	require_once "template/header.php";
 	require_once "functions/functions.php";
-
-	
 	$row = select4LatestBook($conn);
 ?>
 

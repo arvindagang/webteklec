@@ -1,16 +1,12 @@
 <?php
 	require_once "template/header.php";
-
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title> Administrator</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
-	
 <form class="form-horizontal" method="post" action="admin_verify.php">
 		<div class="form-group">
 			<label for="name" class="control-label col-md-4">Username</label>
@@ -26,7 +22,6 @@
 		</div>
 		<input type="submit" name="submit" class="btn btn-primary">
 	</form>
-
 <?php
 	require_once "template/footer.php";
 ?>

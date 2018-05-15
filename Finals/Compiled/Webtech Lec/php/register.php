@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL</title>
+	<title>Registration</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>

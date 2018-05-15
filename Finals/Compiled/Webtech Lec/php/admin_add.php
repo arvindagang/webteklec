@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	require_once "functions/admin.php";
-	require "template/header.php";
-	require "functions/functions.php";
-	
+	require_once "./functions/admin.php";
+	require "./template/header.php";
+	require "./functions/functions.php";
+	$conn = db_connect();
 
 	if(isset($_POST['add'])){
 		$isbn = trim($_POST['isbn']);
@@ -24,7 +24,7 @@
 		$publisher = trim($_POST['publisher']);
 		$publisher = mysqli_real_escape_string($conn, $publisher);
 
-		// add image
+	
 		if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
 			$image = $_FILES['image']['name'];
 			$directory_self = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
@@ -32,13 +32,11 @@
 			$uploadDirectory .= $image;
 			move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
 		}
-
-		// find publisher and return pubid
-		// if publisher is not in db, create new
+		
 		$findPub = "SELECT * FROM publisher WHERE publisher_name = '$publisher'";
 		$findResult = mysqli_query($conn, $findPub);
 		if(!$findResult){
-			// insert into publisher table and return id
+		
 			$insertPub = "INSERT INTO publisher(publisher_name) VALUES ('$publisher')";
 			$insertResult = mysqli_query($conn, $insertPub);
 			if(!$insertResult){
@@ -69,19 +67,19 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-	<form method="post" action="admin_add.php" >
+	<form method="post" action="admin_add.php" enctype="multipart/form-data">
 		<table class="table">
 			<tr>
 				<th>ISBN</th>
-				<td><input type="text" name="isbn"></td>
+				<td style="color: black"><input type="text" name="isbn"></td>
 			</tr>
 			<tr>
 				<th>Title</th>
-				<td><input type="text" name="title" required></td>
+				<td style="color: black"><input type="text" name="title" required></td>
 			</tr>
 			<tr>
 				<th>Author</th>
-				<td><input type="text" name="author" required></td>
+				<td style="color: black"><input type="text" name="author" required></td>
 			</tr>
 			<tr>
 				<th>Image</th>
@@ -89,15 +87,15 @@
 			</tr>
 			<tr>
 				<th>Description</th>
-				<td><textarea name="descr" cols="40" rows="5"></textarea></td>
+				<td style="color: black"><textarea name="descr" cols="40" rows="5"></textarea></td>
 			</tr>
 			<tr>
 				<th>Price</th>
-				<td><input type="text" name="price" required></td>
+				<td style="color: black"><input type="text" name="price" required></td>
 			</tr>
 			<tr>
 				<th>Publisher</th>
-				<td><input type="text" name="publisher" required></td>
+				<td style="color: black"><input type="text" name="publisher" required></td>
 			</tr>
 		</table>
 		<input type="submit" name="add" value="Add new book" class="btn btn-primary">
@@ -106,9 +104,8 @@
 	<br/>
 <?php
 	if(isset($conn)) {mysqli_close($conn);}
-	require_once "template/footer.php";
+	require_once "./template/footer.php";
 ?>
-
 
 </body>
 </html>

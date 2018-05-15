@@ -4,8 +4,8 @@
 		echo "Error! Check again!";
 		exit;
 	}
-	require_once "functions/functions.php";
-	
+	require_once "./functions/functions.php";
+	$conn = db_connect();
 
 	$username = trim($_POST['name']);
 	$password = trim($_POST['pass']);
@@ -17,10 +17,10 @@
 
 	$username = mysqli_real_escape_string($conn, $username);
 	$password = mysqli_real_escape_string($conn, $password);
-	$password = sha1($password);
+	$password = md5($password);
 
-	// get from db
-	$query = "SELECT username, password from admin";
+	
+	$query = "SELECT username, password from users";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
 		echo "Data is Empty " . mysqli_error($conn);

@@ -1,9 +1,9 @@
 <?php
   session_start();
   $count = 0;
-  // connecto database
   require_once "functions/functions.php";
-  
+  $conn = db_connect();
+
   $query = "SELECT book_isbn, book_image FROM books";
   $result = mysqli_query($conn, $query);
   if(!$result){

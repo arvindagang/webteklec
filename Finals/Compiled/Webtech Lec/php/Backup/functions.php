@@ -1,6 +1,6 @@
 <?php
 	$conn = mysqli_connect("localhost", "root", "", "web");
-	function db_connect(){
+function db_connect(){
 		$conn = mysqli_connect("localhost", "root", "", "web");
 		if(!$conn){
 			echo "Can't connect database " . mysqli_connect_error($conn);
@@ -8,6 +8,9 @@
 		}
 		return $conn;
 	}
+
+
+
 
 	function select4LatestBook($conn){
 		$row = array();
@@ -123,17 +126,13 @@
 		}
 		return $result;
 	}
-
-
+	
 $username = "";
 $email    = "";
 $errors   = array();
 
 if (isset($_POST['register_btn'])) {
 	register();
-}
-if (isset($_POST['register_btn_admin'])) {
-	admin();
 }
 	
 function register(){
@@ -165,7 +164,7 @@ function register(){
 					  VALUES('$username', '$email', 'user', '$password')";
 			mysqli_query($conn, $query);
 
-		
+			// get id of the created user
 			$logged_in_user_id = mysqli_insert_id($conn);
 
 			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
@@ -174,7 +173,6 @@ function register(){
 		}
 	}
 }
-
 function admin(){
 	global $conn, $errors, $username, $email;
 
@@ -187,12 +185,12 @@ function admin(){
 		$password = md5($password);//encrypt the password before saving in the database
 
 		if (isset($_POST['usertype'])) {
-			$user_type = e($_POST['usertype']);
-			$query = "INSERT INTO users (username, email, usertype, password) 
-					  VALUES('$username', '$email', 'admin', '$password')";
+			$usertype = 'admin';
+			$query = "INSERT INTO admin (username, email, usertype, password) 
+					  VALUES('$username', '$email', '$usertype', '$password')";
 			mysqli_query($conn, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: index.php');
+			header('location: ../index.php');
 		}else{
 			
 		}
@@ -203,6 +201,8 @@ function getUserById($userId){
 	$query = "SELECT * FROM users WHERE userId=" . $userId;
 	$result = mysqli_query($conn, $query);
 
+	$user = mysqli_fetch_assoc($result);
+	return $user;
 }
 
 function e($val){
@@ -237,7 +237,8 @@ function login(){
 			$logged_in_user = mysqli_fetch_assoc($results);
 			if ($logged_in_user['usertype'] == 'admin') {
 
-				
+				$_SESSION['user'] = $logged_in_user;
+				$_SESSION['success']  = "You are now logged in";
 				header('location: admin_book.php');		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
@@ -251,38 +252,5 @@ function login(){
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

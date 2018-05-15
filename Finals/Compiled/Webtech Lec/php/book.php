@@ -3,7 +3,7 @@
   $book_isbn = $_GET['bookisbn'];
 
   require_once "functions/functions.php";
-  
+  $conn = db_connect();
 
   $query = "SELECT * FROM books WHERE book_isbn = '$book_isbn'";
   $result = mysqli_query($conn, $query);
@@ -27,6 +27,7 @@
 <head>
     <title>PHP Book</title>
 </head>
+<body>
       <p class="lead" style="margin: 25px 0"><a href="books.php">Books</a> > <?php echo $row['book_title']; ?></p>
       <div class="row">
         <div class="col-md-3 text-center">
@@ -74,5 +75,5 @@
 <?php
   require "template/footer.php";
 ?>
-
+</body>
 </html>

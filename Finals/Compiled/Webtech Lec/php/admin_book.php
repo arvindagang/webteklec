@@ -1,24 +1,11 @@
 <?php
 	session_start();
-	require_once "functions/functions.php";
-	
+	require_once "functions/admin.php";
 	require_once "template/header.php";
-	
-
-	
+	require_once "functions/functions.php";
+	$conn = db_connect();
 	$result = getAll($conn);
-	
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Administrator Panel</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<body>
-
-
 	<div id="container">
 		<div id="column">
 			<td><p class="lead">
@@ -32,7 +19,7 @@
 		</div>
 	</div>
 
-	<a href="admin_signout.php" class="btn btn-primary">Sign out!</a>
+	<a href="logout.php" class="btn btn-primary">Sign out!</a>
 	<table class="table" style="margin-top: 20px">
 		<tr>
 			<th>ISBN</th>
@@ -64,5 +51,3 @@
 	if(isset($conn)) {mysqli_close($conn);}
 	require_once "template/footer.php";
 ?>
-</body>
-</html>

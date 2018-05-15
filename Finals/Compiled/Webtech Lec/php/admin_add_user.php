@@ -1,19 +1,15 @@
 <?php
 	session_start();
-	require_once "functions/functions.php";
-	require_once "template/header.php";
-	
-	
+	require_once "./functions/functions.php";
+	require_once "./template/header.php";
+	$conn = db_connect();
 	$result = getAll($conn);
-
-	
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin -Create Admin</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<title>Admin-Create Admin</title>
 </head>
 <body>
 	<form method="post" action="admin_add_user.php">
@@ -23,32 +19,19 @@
 		</div>
 		<div class="input-group">
 			<label>Email</label>
-			<input type="email" name="email" required>
+			<input type="text" name="email" required>
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="password_1" required>
+			<input type="password" name="password" required>
 		</div>
 		<div class="input-group">
 			<label>Confirm password</label>
-			<input type="password" name="password_2" required>
+			<input type="password" name="cpassword" required>
 		</div>
 		<div class="input-group">
-			<button type="submit" class="btn" name="register_btn_admin">Create Admin</button>
-			<?php 
-				if (isset($_POST['register_btn_admin'])) {
-						admin();
-					}
-
-				
-			?>
+			<button type="submit" class="btn" name="register_btn">Create Admin</button>
 		</div>
-
 	</form>
-
-
-
-
-
 </body>
 </html>

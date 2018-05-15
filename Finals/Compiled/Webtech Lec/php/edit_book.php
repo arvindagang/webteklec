@@ -1,5 +1,5 @@
 <?php	
-	// if save change happen
+
 	if(!isset($_POST['save_change'])){
 		echo "Something wrong!";
 		exit;
@@ -22,12 +22,9 @@
 
 	require_once("functions/functions.php");
 	$conn = db_connect();
-
-	// if publisher is not in db, create new
 	$findPub = "SELECT * FROM publisher WHERE publisher_name = '$publisher'";
 	$findResult = mysqli_query($conn, $findPub);
 	if(!$findResult){
-		// insert into publisher table and return id
 		$insertPub = "INSERT INTO publisher(publisher_name) VALUES ('$publisher')";
 		$insertResult = mysqli_query($conn, $insertPub);
 		if(!$insertResult){
@@ -35,8 +32,6 @@
 			exit;
 		}
 	}
-
-
 	$query = "UPDATE books SET  
 	book_title = '$title', 
 	book_author = '$author', 

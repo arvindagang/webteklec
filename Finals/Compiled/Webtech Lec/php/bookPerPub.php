@@ -6,7 +6,7 @@
 <body>
 <?php
 	session_start();
-	require_once "../functions/functions.php";
+	require_once "./functions/functions.php";
 
 	if(isset($_GET['pubid'])){
 		$pubid = $_GET['pubid'];
@@ -16,7 +16,7 @@
 	}
 
 	
-	
+	$conn = db_connect();
 	$pubName = getPubName($conn, $pubid);
 
 	$query = "SELECT book_isbn, book_title, book_image FROM books WHERE publisherid = '$pubid'";
@@ -31,7 +31,7 @@
 	}
 
 	
-	require "../template/header.php";
+	require "./template/header.php";
 ?>
 	<p class="lead"><a href="publisher_list.php">Publishers</a> > <?php echo $pubName; ?></p>
 	<?php while($row = mysqli_fetch_assoc($result)){
@@ -49,7 +49,7 @@
 <?php
 	}
 	if(isset($conn)) { mysqli_close($conn);}
-	require "../template/footer.php";
+	require "./template/footer.php";
 ?>
 
 

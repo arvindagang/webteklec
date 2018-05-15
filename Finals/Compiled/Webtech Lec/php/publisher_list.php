@@ -4,11 +4,10 @@
 	<title>Publishers</title>
 </head>
 <body>
-
 <?php
 	session_start();
-	require_once "../functions/functions.php";
-	
+	require_once "./functions/functions.php";
+	$conn = db_connect();
 
 	$query = "SELECT * FROM publisher ORDER BY publisherid";
 	$result = mysqli_query($conn, $query);
@@ -20,11 +19,16 @@
 		echo "Empty publisher ! Something wrong! check again";
 		exit;
 	}
-
-	$title = "List Of Publishers";
-	require "../template/header.php";
+	require "./template/header.php";
 ?>
-	<p class="lead">List of Publisher</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<p class="lead">List of Publisher</p>
 	<ul>
 	<?php 
 		while($row = mysqli_fetch_assoc($result)){
@@ -52,7 +56,7 @@
 	</ul>
 <?php
 	mysqli_close($conn);
-	require "../template/footer.php";
+	require "./template/footer.php";
 ?>
 </body>
 </html>
